@@ -1,0 +1,9 @@
+
+<suite thread-count="5" verbose="1" name="Entrata portal automation">
+
+    <test name="Entrata portal automation">
+        <classes>
+            <class name="Entrata TestCase"/>
+        </classes>
+    </test>
+</suite>
