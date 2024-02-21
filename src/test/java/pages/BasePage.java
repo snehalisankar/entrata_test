@@ -17,29 +17,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 
 public class BasePage {
-	public WebDriver driver;
-	WebDriverWait wait;
+	public static WebDriver driver;
+	public static WebDriverWait wait;
   
     @BeforeClass
     public void setUp() throws IOException {
         System.setProperty("webdriver.edge.driver", "C:\\Users\\User\\Downloads\\Entrata\\entrata\\src\\driver\\msedgedriver.exe");
  
-        //add your driver extension in "src\\driver\\chromedriver.exe" this folder
-        
-        // code here
-        
+        // code to click on poppup window
         EdgeOptions options = new EdgeOptions();
         options.addArguments("--start-maximized");
-
-        // Set the preference to enable personalization data consent
         Map<String, Object> prefs = new LinkedHashMap<>();
         prefs.put("user_experience_metrics.personalization_data_consent_enabled", true);
         options.setExperimentalOption("prefs", prefs);
-        
-        // code here
-        
-        
-        WebDriver driver = new EdgeDriver(options);
+         driver = new EdgeDriver(options);
        
         try {
         	 driver.get("https://www.entrata.com/");
